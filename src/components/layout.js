@@ -9,8 +9,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+
 import Header from "./header"
-import "./layout.css"
+
+import 'sanitize.css';
+import 'sanitize.css/forms.css';
+import 'sanitize.css/typography.css';
+// import "./layout.css"
+import './custom.css'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,11 +31,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      
+      <div id="snipcart" data-config-modal-style="side" data-api-key="YzVmODBkNTEtNmM0My00ZjlhLWEyODMtYmY4ODMyMWM3YzUyNjM3NDIwNzA0Mjc2NDEzNjY1" hidden></div>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: 1200,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
